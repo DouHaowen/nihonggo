@@ -23,3 +23,60 @@
 ```bash
 git clone https://github.com/你的用户名/你的项目名.git
 cd 你的项目名
+
+安装依赖（建议使用虚拟环境）
+bash
+复制
+编辑
+pip install -r requirements.txt
+配置 OpenAI API Key
+在根目录下新建 .env 文件，内容如下：
+
+ini
+复制
+编辑
+OPENAI_API_KEY=你的API密钥
+启动应用
+bash
+复制
+编辑
+streamlit run app.py
+🖥️ 功能演示
+上传日语音频或视频文件，自动生成带假名和翻译的字幕。
+
+支持单句循环播放，便于跟读和听力训练。
+
+点击任意句子，自动分析词汇、语法点、例句等，输出表格和详细解释。
+
+多语言界面一键切换，适合不同用户群体。
+
+📦 主要技术栈
+前端/界面：Streamlit
+
+语音转写：OpenAI Whisper
+
+智能分句/翻译/分析：OpenAI GPT-4o
+
+音视频处理：moviepy
+
+多语言支持：内置多语言文本映射
+
+📝 目录结构
+bash
+复制
+编辑
+├── app.py
+├── utils/
+├── components/
+├── assets/
+├── .env           # OpenAI 密钥文件（需手动创建）
+├── requirements.txt
+🙏 致谢
+感谢 OpenAI 提供的强大 API 支持
+
+感谢 Streamlit 社区的优秀生态
+
+感谢所有日语学习者的反馈与建议
+
+📮 联系与反馈
+如有建议、Bug 反馈或合作意向，欢迎通过 GitHub Issues 提出，或邮件联系作者。
