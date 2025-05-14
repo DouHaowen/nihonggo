@@ -17,8 +17,8 @@
 ### 克隆项目
 
 ```bash
-git clone https://github.com/你的用户名/你的项目名.git
-cd 你的项目名
+git clone https://github.com/DouHaowen/nihonggo.git
+cd nihonggo
 ```
 
 ### 安装依赖（建议使用虚拟环境）
@@ -60,9 +60,6 @@ streamlit run app.py
 
 ```bash
 ├── app.py                     # 主程序入口
-├── utils/                     # 工具函数目录
-├── components/                # UI组件目录
-├── assets/                    # 静态资源目录
 ├── .env                       # OpenAI 密钥文件（需手动创建）
 ├── requirements.txt           # 依赖列表
 ```
