@@ -23,8 +23,3 @@
 ```bash
 git clone https://github.com/你的用户名/你的项目名.git
 cd 你的项目名
-
-### 安装依赖（建议使用虚拟环境）
-```bash
-pip install -r requirements.txt
-
