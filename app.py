@@ -46,7 +46,7 @@ def check_api_key():
             st.session_state.api_key = api_key
             openai.api_key = api_key
             st.success("API Key 已设置！")
-            st.experimental_rerun()
+            st.rerun()
         return False
     return True
 
