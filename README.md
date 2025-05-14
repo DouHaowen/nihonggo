@@ -2,6 +2,8 @@
 
 一个基于 **Streamlit + OpenAI** 的多语言日语学习平台，支持音视频转写、智能断句、自动翻译、假名标注、单句分析等功能，助力日语学习者高效提升听说读写能力。
 
+👉 **在线体验地址**：[https://nihonggo-saita.streamlit.app/](https://nihonggo-saita.streamlit.app/)
+
 ## ✨ 项目特色
 
 - **多语言界面**：支持中文、英文、韩文三种界面，适合不同母语的用户。  
