@@ -1,6 +1,6 @@
 # 🌸 日语学习助手 | Japanese Learning Assistant
 
-一个基于 **Streamlit + OpenAI** 的多语言日语学习平台，支持音视频转写、智能断句、自动翻译、假名标注、单句分析等功能，助力日语学习者高效提升听说读写能力。
+一个基于 **Streamlit + LLM** 的多语言日语学习平台，支持音视频转写、智能断句、自动翻译、假名标注、单句分析等功能，助力日语学习者高效提升听读能力。
 
 👉 **在线体验地址**：[https://nihonggo-saita.streamlit.app/](https://nihonggo-saita.streamlit.app/)
 
