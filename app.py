@@ -38,6 +38,7 @@ def check_api_key():
     """
     检查用户是否已输入 OpenAI API Key。
     若未输入，则在侧边栏提示输入，输入后写入 session 并刷新页面。
+    返回是否已设置 API key 的状态。
     """
     if st.session_state.api_key is None:
         st.warning("请先输入您的 OpenAI API Key")
@@ -209,12 +210,13 @@ with st.sidebar:
     )
     st.session_state.selected_language = selected_language
     current_lang = LANGUAGE_MAPPINGS[selected_language]
-    # 检查 API key，未设置则中断后续流程
-    if not check_api_key():
-        st.stop()
+    
+    # 检查 API key
+    has_api_key = check_api_key()
+    
     # 文件上传控件，支持多种音视频格式
-    uploaded = st.file_uploader(current_lang["upload_text"], type=['mp4', 'mp3', 'wav', 'mov'])
-    if uploaded:
+    uploaded = st.file_uploader(current_lang["upload_text"], type=['mp4', 'mp3', 'wav', 'mov'], disabled=not has_api_key)
+    if uploaded and has_api_key:
         # 保存上传的临时文件
         suffix = os.path.splitext(uploaded.name)[1]
         with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
