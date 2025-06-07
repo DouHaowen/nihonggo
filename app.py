@@ -40,13 +40,14 @@ def check_api_key():
     若未输入，则在侧边栏提示输入，输入后写入 session 并刷新页面。
     返回是否已设置 API key 的状态。
     """
+    current_lang = LANGUAGE_MAPPINGS[st.session_state.selected_language]
     if st.session_state.api_key is None:
-        st.warning("请先输入您的 OpenAI API Key")
-        api_key = st.text_input("OpenAI API Key", type="password")
+        st.warning(current_lang["api_key_warning"])
+        api_key = st.text_input(current_lang["api_key_input"], type="password")
         if api_key:
             st.session_state.api_key = api_key
             openai.api_key = api_key
-            st.success("API Key 已设置！")
+            st.success(current_lang["api_key_success"])
             st.rerun()
         return False
     return True
@@ -68,6 +69,9 @@ LANGUAGE_MAPPINGS = {
         "loop_play": "循环播放",
         "cancel_loop": "取消循环",
         "click_to_analyze": "点击分析此句",
+        "api_key_warning": "请先输入您的 OpenAI API Key",
+        "api_key_input": "OpenAI API Key",
+        "api_key_success": "API Key 已设置！",
         "manual": """
     ### 📖 使用手册
 
@@ -108,6 +112,9 @@ LANGUAGE_MAPPINGS = {
         "loop_play": "Loop Play",
         "cancel_loop": "Cancel Loop",
         "click_to_analyze": "Click to analyze",
+        "api_key_warning": "Please enter your OpenAI API Key first",
+        "api_key_input": "OpenAI API Key",
+        "api_key_success": "API Key has been set!",
         "manual": """
     ### 📖 User Manual
 
@@ -148,6 +155,9 @@ LANGUAGE_MAPPINGS = {
         "loop_play": "반복 재생",
         "cancel_loop": "반복 취소",
         "click_to_analyze": "분석하려면 클릭",
+        "api_key_warning": "OpenAI API Key를 먼저 입력해주세요",
+        "api_key_input": "OpenAI API Key",
+        "api_key_success": "API Key가 설정되었습니다!",
         "manual": """
     ### 📖 사용 설명서
 
@@ -176,7 +186,7 @@ LANGUAGE_MAPPINGS = {
 }
 
 # ========== 页面配置与自定义样式 ==========
-st.set_page_config(page_title="📝 实时双语字幕播放器", layout="wide")
+st.set_page_config(page_title="🌸 日语学习助手", layout="wide")
 
 # 添加自定义 CSS 样式（美化标题、模块标题等）
 st.markdown("""
